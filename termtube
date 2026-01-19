@@ -13,7 +13,7 @@ NC='\033[0m' # No Color
 
 # Check for dependencies
 # Check for dependencies
-DEPENDENCIES=("yt-dlp" "jq" "fzf" "ffmpeg" "node" "mpv")
+DEPENDENCIES=("yt-dlp" "jq" "fzf" "ffmpeg" "node")
 MISSING_DEPS=()
 
 for dep in "${DEPENDENCIES[@]}"; do
@@ -67,18 +67,6 @@ search_and_download() {
     VIDEO_TITLE=$(echo "$SELECTED" | awk -F'\t' '{print $1}')
 
     echo -e "${GREEN}Selected: $VIDEO_TITLE${NC}"
-
-    # Action Menu: Play or Download
-    ACTION=$(echo -e "Stream (Play in MPV)\nDownload" | fzf --header="Choose Action" --layout=reverse --height=20% --border)
-
-    if [ "$ACTION" == "Stream (Play in MPV)" ]; then
-        echo -e "${BLUE}Launching MPV...${NC}"
-        mpv --vo=gpu "https://www.youtube.com/watch?v=$VIDEO_ID"
-        exit 0
-    elif [ -z "$ACTION" ]; then
-        echo "No action selected. Exiting."
-        exit 0
-    fi
 
     # Download Logic with Simplified Menu
     echo -e "${YELLOW}Fetching formats...${NC}"

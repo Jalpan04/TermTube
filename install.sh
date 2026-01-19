@@ -28,12 +28,12 @@ install_dependencies() {
     case $DISTRO in
         arch|manjaro)
             echo "Detected Arch Linux/Manjaro."
-            sudo pacman -Syu --noconfirm yt-dlp jq fzf ffmpeg nodejs npm mpv
+            sudo pacman -Syu --noconfirm yt-dlp jq fzf ffmpeg nodejs npm
             ;;
         debian|ubuntu|kali|linuxmint)
             echo "Detected Debian/Ubuntu based system."
             sudo apt update
-            sudo apt install -y yt-dlp jq fzf ffmpeg nodejs npm mpv
+            sudo apt install -y yt-dlp jq fzf ffmpeg nodejs npm
             ;;
         macos)
             echo "Detected macOS."
@@ -41,11 +41,11 @@ install_dependencies() {
                 echo -e "${RED}Homebrew not found. Please install Homebrew first.${NC}"
                 exit 1
             fi
-            brew install yt-dlp jq fzf ffmpeg node mpv
+            brew install yt-dlp jq fzf ffmpeg node
             ;;
         *)
             echo -e "${RED}Unsupported distribution: $DISTRO${NC}"
-            echo "Please install 'yt-dlp', 'jq', 'fzf', 'ffmpeg', 'nodejs' and 'mpv' manually."
+            echo "Please install 'yt-dlp', 'jq', 'fzf', 'ffmpeg', and 'nodejs' manually."
             ;;
     esac
 }
