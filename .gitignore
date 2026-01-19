@@ -1,0 +1,14 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Downloads (in case user downloads to repo root)
+*.mp4
+*.mkv
+*.webm
+*.mp3
+*.m4a
+
+# Temp files
+*.tmp
+*.log
