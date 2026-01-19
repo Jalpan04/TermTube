@@ -43,7 +43,9 @@ search_and_download() {
 
     # Search and parse results into a format for fzf
     # Format: Title | Channel | Duration | ID
-    RESULTS=$(yt-dlp "ytsearch15:$QUERY" --dump-json --flat-playlist 2>/dev/null | \
+    RESULTS=$(yt-dlp "ytsearch15:$QUERY" \
+        --extractor-args "youtube:player_client=android,web" \
+        --dump-json --flat-playlist 2>/dev/null | \
         jq -r '[.title, .channel, .duration_string, .id] | @tsv')
 
     if [ -z "$RESULTS" ]; then
@@ -128,7 +130,10 @@ search_and_download() {
     
     # Download
     # shellcheck disable=SC2086
-    yt-dlp $FORMAT_OPT -o "$OUTPUT_TEMPLATE" "$VIDEO_ID"
+    yt-dlp $FORMAT_OPT \
+        --extractor-args "youtube:player_client=android,web" \
+        --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" \
+        -o "$OUTPUT_TEMPLATE" "$VIDEO_ID"
 
     echo -e "${GREEN}Download Complete!${NC}"
 }
