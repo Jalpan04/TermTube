@@ -28,7 +28,7 @@ install_dependencies() {
     case $DISTRO in
         arch|manjaro)
             echo "Detected Arch Linux/Manjaro."
-            sudo pacman -Syu --noconfirm yt-dlp jq fzf ffmpeg nodejs npm vlc mpv gst-libav gst-plugins-good
+            sudo pacman -Syu --noconfirm yt-dlp jq fzf ffmpeg nodejs npm mplayer
             ;;
         debian|ubuntu|kali|linuxmint)
             echo "Detected Debian/Ubuntu based system."
