@@ -73,7 +73,7 @@ search_and_download() {
 
     if [ "$ACTION" == "Stream (Play in MPV)" ]; then
         echo -e "${BLUE}Launching MPV...${NC}"
-        mpv "https://www.youtube.com/watch?v=$VIDEO_ID"
+        mpv --vo=gpu "https://www.youtube.com/watch?v=$VIDEO_ID"
         exit 0
     elif [ -z "$ACTION" ]; then
         echo "No action selected. Exiting."
