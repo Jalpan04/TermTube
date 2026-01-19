@@ -12,7 +12,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
 # Check for dependencies
-DEPENDENCIES=("yt-dlp" "jq" "fzf" "ffmpeg")
+DEPENDENCIES=("yt-dlp" "jq" "fzf" "ffmpeg" "node")
 MISSING_DEPS=()
 
 for dep in "${DEPENDENCIES[@]}"; do
