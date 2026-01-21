@@ -25,7 +25,7 @@ TermTube includes an automated installer script that detects Arch Linux and hand
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/termtube.git
+   git clone https://github.com/jalpan04/termtube.git
    cd termtube
    ```
 
