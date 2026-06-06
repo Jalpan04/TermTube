@@ -1,5 +1,7 @@
 # TermTube
 
+![GitHub top language](https://img.shields.io/github/languages/top/Jalpan04/TermTube) ![GitHub repo size](https://img.shields.io/github/repo-size/Jalpan04/TermTube) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 TermTube is a lightweight, terminal-based wrapper for `yt-dlp` that allows you to search for YouTube videos, select formats interactively, and download them with ease. It combines the power of `yt-dlp` with the interactivity of `fzf`.
 
 ## Features
